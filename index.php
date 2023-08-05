@@ -1,6 +1,9 @@
 <?php
 //In this file starts the App
-echo "Hello World";
+require_once './Models/bootcampModel.php';
+require_once './Controllers/bootcampController.php';
 
+$controller = new BootcampController ();
+$controller -> index ();
 
 ?>
