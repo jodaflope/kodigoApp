@@ -31,6 +31,25 @@ class Bootcamp
 
         return $bootcamps;
     }
+
+    //Add Bootcamps
+    public function add_bootcamp($title, $description, $start_bootcamp, $end_bootcamp, $modules)
+    {
+        //Create the consult
+        $sql = "INSERT INTO bootcamps(title, description, start_bootcamp, end_bootcamp, modules)
+        VALUES ('$title','$description','$start_bootcamp', '$end_bootcamp','$modules')
+        ";
+
+        //Ejecutar la consulta
+        $result = $this -> conn -> query ($sql);
+        //Process the consult
+        if ($result)
+        {
+            echo 'New bootcamp created successfully';
+        } else {
+            echo 'Error creating new bootcamp';
+        }
+    }
 }
 
 ?>
